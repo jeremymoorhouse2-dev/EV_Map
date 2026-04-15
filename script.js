@@ -1,45 +1,56 @@
 mapboxgl.accessToken = "pk.eyJ1Ijoiam1vb3Job3VzZSIsImEiOiJjbW13YWVoenYydXQ1MnJwbGVlemRxdzdtIn0.6TPYi4u6gPKJmjUrXj4Orw";
 
-const canadaBounds = [
-  [-141.0, 41.0],
-  [-52.0, 70.5]
+const bounds = [
+  [-141, 41],
+  [-52, 70]
 ];
 
-const map = new mapboxgl.Map({
-  container: "map",
+const beforeMap = new mapboxgl.Map({
+  container: "before",
   style: "mapbox://styles/mapbox/light-v11",
-  bounds: canadaBounds,
-  fitBoundsOptions: {
-    padding: 30
-  },
-  maxBounds: canadaBounds
+  bounds: bounds,
+  fitBoundsOptions: { padding: 30 }
 });
 
-map.addControl(new mapboxgl.NavigationControl(), "top-right");
+const afterMap = new mapboxgl.Map({
+  container: "after",
+  style: "mapbox://styles/mapbox/light-v11",
+  bounds: bounds,
+  fitBoundsOptions: { padding: 30 }
+});
 
-map.on("load", () => {
-  map.addSource("ev-coverage-2015", {
+beforeMap.on("load", () => {
+  beforeMap.addSource("ev2015", {
     type: "geojson",
     data: "data/ev_fast_chargers_2015_buffer_300km_dissolved.geojson"
   });
 
-  map.addLayer({
-    id: "ev-coverage-2015-fill",
+  beforeMap.addLayer({
+    id: "fill2015",
     type: "fill",
-    source: "ev-coverage-2015",
+    source: "ev2015",
     paint: {
       "fill-color": "#D52B1E",
       "fill-opacity": 0.5
     }
   });
+});
 
-  map.addLayer({
-    id: "ev-coverage-2015-outline",
-    type: "line",
-    source: "ev-coverage-2015",
+afterMap.on("load", () => {
+  afterMap.addSource("ev2025", {
+    type: "geojson",
+    data: "data/ev_fast_chargers_2025_buffer_300km_dissolved.geojson"
+  });
+
+  afterMap.addLayer({
+    id: "fill2025",
+    type: "fill",
+    source: "ev2025",
     paint: {
-      "line-color": "#D52B1E",
-      "line-width": 1.5
+      "fill-color": "#D52B1E",
+      "fill-opacity": 0.5
     }
   });
 });
+
+new mapboxgl.Compare(beforeMap, afterMap, "#comparison-container");
