@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -9,8 +8,6 @@ body {
 .map-wrap {
   position: relative;
   height: 100vh;
-  width: 100%;
-  overflow: hidden;
 }
 
 .map-header {
@@ -20,57 +17,49 @@ body {
   right: 0;
   z-index: 10;
   padding: 12px 16px;
-  background: rgba(255, 255, 255, 0.96);
-  border-bottom: 1px solid #d9d9d9;
+  background: rgba(255,255,255,0.96);
+  border-bottom: 1px solid #ddd;
 }
 
 .map-header h1 {
-  margin: 0 0 4px 0;
+  margin: 0;
   font-size: 20px;
-  color: #2B2B2B;
 }
 
 .map-header p {
-  margin: 0;
+  margin: 4px 0 0 0;
   font-size: 14px;
   color: #555;
 }
 
-#map {
+#comparison-container {
   position: absolute;
-  top: 61px;
+  top: 65px;
   bottom: 0;
   width: 100%;
 }
 
-.map-legend {
+.map {
   position: absolute;
-  bottom: 24px;
-  left: 24px;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.label {
+  position: absolute;
+  top: 80px;
   z-index: 11;
-  background: rgba(255, 255, 255, 0.96);
-  padding: 10px 12px;
-  border-radius: 8px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
-  font-size: 13px;
-  color: #2B2B2B;
+  background: rgba(255,255,255,0.9);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-weight: bold;
 }
 
-.legend-title {
-  font-weight: 600;
-  margin-bottom: 8px;
+.label-left {
+  left: 20px;
 }
 
-.legend-item {
-  display: flex;
-  align-items: center;
-}
-
-.legend-fill {
-  width: 18px;
-  height: 12px;
-  margin-right: 8px;
-  background: rgba(213, 43, 30, 0.5);
-  border: 1px solid #D52B1E;
-  border-radius: 2px;
+.label-right {
+  right: 20px;
 }
