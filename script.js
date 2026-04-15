@@ -31,7 +31,8 @@ beforeMap.on("load", () => {
     source: "ev2015",
     paint: {
       "fill-color": "#D52B1E",
-      "fill-opacity": 0.5
+      "fill-opacity": 0.4
+      "fill-outline-color": "#D52B1E"
     }
   });
 });
@@ -48,7 +49,8 @@ afterMap.on("load", () => {
     source: "ev2025",
     paint: {
       "fill-color": "#D52B1E",
-      "fill-opacity": 0.5
+      "fill-opacity": 0.4
+      "fill-outline-color": "#D52B1E"
     }
   });
 });
