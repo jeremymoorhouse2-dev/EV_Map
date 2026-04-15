@@ -63,3 +63,34 @@ html, body {
 .label-right {
   right: 20px;
 }
+.map-legend {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  z-index: 11;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 10px 12px;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+  font-size: 13px;
+  color: #2B2B2B;
+}
+
+.legend-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+}
+
+.legend-fill {
+  width: 18px;
+  height: 12px;
+  margin-right: 8px;
+  background: rgba(213, 43, 30, 0.4);
+  border: 1.5px solid #D52B1E;
+  border-radius: 2px;
+}
