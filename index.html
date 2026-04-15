@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>EV Fast Charging Coverage Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link
+    href="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="map-wrap">
+    <div class="map-header">
+      <h1>EV Fast Charging Coverage</h1>
+      <p>Estimated 300 km fast-charging coverage in Canada, 2015.</p>
+    </div>
+
+    <div id="map"></div>
+
+    <div class="map-legend">
+      <div class="legend-title">Legend</div>
+      <div class="legend-item">
+        <span class="legend-fill"></span>
+        <span>300 km charger coverage</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
