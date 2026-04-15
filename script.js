@@ -32,7 +32,16 @@ beforeMap.on("load", () => {
     paint: {
       "fill-color": "#D52B1E",
       "fill-opacity": 0.4
-      "fill-outline-color": "#D52B1E"
+    }
+  });
+
+  beforeMap.addLayer({
+    id: "outline2015",
+    type: "line",
+    source: "ev2015",
+    paint: {
+      "line-color": "#D52B1E",
+      "line-width": 1.5
     }
   });
 });
@@ -50,7 +59,16 @@ afterMap.on("load", () => {
     paint: {
       "fill-color": "#D52B1E",
       "fill-opacity": 0.4
-      "fill-outline-color": "#D52B1E"
+    }
+  });
+
+  afterMap.addLayer({
+    id: "outline2025",
+    type: "line",
+    source: "ev2025",
+    paint: {
+      "line-color": "#D52B1E",
+      "line-width": 1.5
     }
   });
 });
