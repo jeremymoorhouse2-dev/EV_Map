@@ -73,4 +73,4 @@ afterMap.on("load", () => {
   });
 });
 
-new mapboxgl.Compare(beforeMap, afterMap, "#comparison-container");
+new mapboxgl.Compare(afterMap, beforeMap, "#comparison-container");
